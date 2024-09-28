@@ -1,0 +1,72 @@
+.roadmap-container {
+    background-color: #002F8C; /* Blue background similar to the image */
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .roadmap-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
+  }
+  
+  .timeline-item {
+    position: relative;
+    width: 24%; /* Ensure four milestones are equally spaced */
+    text-align: center;
+  }
+  
+  .timeline-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #FF5CA0; /* Pink circle */
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .timeline-date {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .timeline-description {
+    font-size: 1em;
+    margin-top: 20px;
+    line-height: 1.5;
+    padding: 0 20px;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: calc(100% + 30px); /* To connect circles */
+    background-color: white;
+  }
+  
+  .timeline-item:first-child::before {
+    content: none;
+  }
+  
+  .timeline-item:last-child::before {
+    content: none;
+  }
+  

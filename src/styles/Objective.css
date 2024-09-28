@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0025a7;
+    color: white;
+  }
+  
+  .crypto-container {
+    width: 50%;        /* Set width to 50% */
+    margin: 0 auto;     /* Center the container */
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+  }
+  
+  .crypto-column {
+    width: 30%;
+    text-align: left;
+  }
+  
+  .crypto-column h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .crypto-column p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .crypto-column p b {
+    font-weight: bold;
+  }
+  
+  .crypto-column p:before {
+    content: "➡️";
+    margin-right: 5px;
+  }
+  

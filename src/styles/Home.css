@@ -1,0 +1,29 @@
+/* Background styling */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 100px;
+    background-color: #003399; /* Blue gradient */
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .image-container {
+    flex-grow: 1;
+  }
+  
+  .globe-image {
+    width: 500px;
+    height: auto;
+  }
+  
+  /* Additional styling to tweak layout and typography */
+  button {
+    text-transform: none;
+  }
+  

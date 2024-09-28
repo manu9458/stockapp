@@ -1,0 +1,48 @@
+.how-to-start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:#0025a7;
+  }
+  
+  .how-to-start-title {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+  
+  .how-to-start-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+  }
+  
+  .how-to-start-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .how-to-start-img {
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+  }
+  
+  .how-to-start-text {
+    flex: 2;
+    color: white;
+    font-size: 18px;
+    margin-left: 40px;
+  }
+  
+  .how-to-start-text ol {
+    padding-left: 20px;
+  }
+  
+  .how-to-start-text li {
+    margin-bottom: 15px;
+  }
+  
