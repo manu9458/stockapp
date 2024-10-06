@@ -15,6 +15,7 @@
   
   .image-container {
     flex-grow: 1;
+    margin-left: 332px;
   }
   
   .globe-image {

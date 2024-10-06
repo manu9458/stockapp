@@ -1,0 +1,13 @@
+/* MainLayout.css */
+.main-layout {
+    display: flex;
+  }
+  
+  .content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Sidebar and TopBar specific styles should be placed in their respective CSS files */
+  

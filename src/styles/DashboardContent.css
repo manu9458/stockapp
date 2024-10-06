@@ -1,0 +1,26 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .info-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .info-card h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #091841;
+  }
+  
+  .info-card p {
+    margin-top: 10px;
+    color: #666;
+  }
+  

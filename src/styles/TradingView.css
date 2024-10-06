@@ -90,13 +90,13 @@
   }
   
   /* Specific icons for cryptocurrencies */
-  .crypto-icon.btc {
-    background-image: url('/assets/icons/bitcoin.png'); /* Update path */
+  /* .crypto-icon.btc {
+    background-image: url('/assets/icons/bitcoin.png');
   }
   
   .crypto-icon.eth {
-    background-image: url('/assets/icons/ethereum.png'); /* Update path */
-  }
+    background-image: url('/assets/icons/ethereum.png'); 
+  } */
   
   /* Change percentage styling */
   .positive-change {

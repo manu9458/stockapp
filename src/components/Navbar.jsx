@@ -8,8 +8,15 @@ import Box from '@mui/material/Box';
 import HomeIcon from '@mui/icons-material/Home'; // Example left-side icon
 import FacebookIcon from '@mui/icons-material/Facebook'; // Right-side icons
 import TwitterIcon from '@mui/icons-material/Twitter';
+import LoginIcon from '@mui/icons-material/Login';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
 const Navbar = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleLoginClick = () => {
+    navigate('/login'); // Navigate to the login page
+  };
   return (
     <AppBar position="static" style={{backgroundColor:'#19193e'}}>
       <Toolbar>
@@ -59,6 +66,9 @@ const Navbar = () => {
           </IconButton>
           <IconButton color="inherit">
             <TwitterIcon />
+          </IconButton>
+          <IconButton color="inherit" onClick={handleLoginClick}>
+            <LoginIcon />
           </IconButton>
         </Box>
       </Toolbar>
