@@ -44,7 +44,7 @@ const DashboardContent = () => {
           </div> */}
 
           {/* Adding the graph below the labels */}
-          <div className="chart-container">
+          {/* <div className="chart-container">
             <ResponsiveContainer width="100%" height={60}>
               <LineChart data={graphData}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -52,7 +52,7 @@ const DashboardContent = () => {
                 <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>
