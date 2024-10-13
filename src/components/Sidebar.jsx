@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <ul className="nav-items">
-        <li><i className="dashboard-icon">🏠</i> Dashboard</li>
+      <li className="selected"><i className="dashboard-icon">🏠</i> Dashboard</li>
         <li><i className="wallet-icon">💼</i> Wallets</li>
         <li><i className="profile-icon">👤</i> Profile</li>
         <li><i className="team-icon">👥</i> Team</li>
