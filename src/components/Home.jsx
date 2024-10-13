@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import '../styles/Home.css'; // Custom CSS for background and layout
+import LoginPage from './LoginPage';
 
 const Home = () => {
   return (
@@ -39,7 +40,7 @@ const Home = () => {
       </Box>
 
       <Box className="image-container">
-  <img src="https://media.giphy.com/media/fxKePwxg8Tq6w/giphy.gif" alt="globe animation" className="globe-image" />
+      <LoginPage></LoginPage>
 </Box>
 
     </Box>

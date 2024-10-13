@@ -67,9 +67,9 @@ const Navbar = () => {
           <IconButton color="inherit">
             <TwitterIcon />
           </IconButton>
-          <IconButton color="inherit" onClick={handleLoginClick}>
+          {/* <IconButton color="inherit" onClick={handleLoginClick}>
             <LoginIcon />
-          </IconButton>
+          </IconButton> */}
         </Box>
       </Toolbar>
     </AppBar>
