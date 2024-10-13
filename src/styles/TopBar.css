@@ -4,12 +4,14 @@
     align-items: center;
     padding: 10px;
     background-color: #fff;
+    height: 52px;
     border-bottom: 2px solid #ddd;
   }
   
   .social-icons svg {
     margin: 0 5px;
     cursor: pointer;
+    color: black;
   }
   
   button {

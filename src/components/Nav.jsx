@@ -2,11 +2,13 @@ import React from 'react';
 import '../styles/Nav.css'
 import AbcIcon from '@mui/icons-material/Abc';
 import LogoutIcon from '@mui/icons-material/Logout';
+import PublicIcon from '@mui/icons-material/Public';
 const Nav = () => {
   return (
     <div className="navbar">
       <div className="logo-section">
-        <AbcIcon></AbcIcon>
+      <span><PublicIcon></PublicIcon></span>
+       <p style={{marginLeft:'7px'}}>Welcome to CapitaGrow SafePlan</p>
       </div>
       <div className="center-section"></div>
       <div className="right-section">

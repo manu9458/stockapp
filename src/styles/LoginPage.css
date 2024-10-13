@@ -52,7 +52,7 @@ body {
   }
   
   .login-btn {
-    background-color: white;
+   background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);;
     color: black;
     font-weight: bold;
     border-radius: 30px;

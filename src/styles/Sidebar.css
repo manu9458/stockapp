@@ -29,3 +29,10 @@
   border-left: 4px solid #007bff; /* Highlight with a left border */
 }
   
+.sub-menu{
+  padding-left: 43px;
+}
+
+.expand-icon{
+  margin-left: 115px;
+}
