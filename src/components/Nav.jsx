@@ -14,11 +14,11 @@ const Nav = () => {
           <span className="message-count">0</span>
           <i className="icon-message">💬</i> {/* Replace with an icon */}
         </div>
-        {/* <div className="power-icon">
+        <div className="power-icon">
           <i className="icon-power">
           <LogoutIcon/>
           </i> 
-        </div> */}
+        </div>
       </div>
     </div>
   );

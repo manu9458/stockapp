@@ -4,6 +4,7 @@ import '../styles/Home.css'; // Custom CSS for background and layout
 import LoginPage from './LoginPage';
 
 const Home = () => {
+  
   return (
     <Box className="container">
       <Box className="content">

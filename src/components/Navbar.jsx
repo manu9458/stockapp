@@ -12,11 +12,6 @@ import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
 const Navbar = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-
-  const handleLoginClick = () => {
-    navigate('/login'); // Navigate to the login page
-  };
   return (
     <AppBar position="static" style={{backgroundColor:'#19193e'}}>
       <Toolbar>

@@ -12,7 +12,6 @@ const MainLayout = () => {
         <div className="main-layout">
       <Sidebar />
       <div className="content-container">
-       
         <DashboardContent />
       </div>
     </div>
