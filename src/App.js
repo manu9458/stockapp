@@ -8,7 +8,9 @@ import TradingView from './components/TradingView';
 import Objective from './components/Objective';
 import StartTradingPage from './components/StartTradingPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LoginPage from './components/LoginPage';
+// import LoginPage from './components/LoginPage';
+import DashboardContent from './components/DashboardContent';
+import MainLayout from './components/MainLayout';
 
 const Allcom = () => {
   return (
@@ -30,7 +32,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Allcom />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard" element={<MainLayout />} />
         {/* Add other routes here if needed */}
       </Routes>
     </Router>

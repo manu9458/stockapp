@@ -3,10 +3,16 @@ import '../styles/LoginPage.css';
 import { AccountCircle, Lock, Person } from '@mui/icons-material';
 import { Checkbox, Button, TextField } from '@mui/material';
 import MainLayout from './MainLayout';
+import { useNavigate } from 'react-router-dom';
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const navigate = useNavigate(); // Initialize useNavigate
+
+    const handleLoginClick = () => {
+      navigate('/dashboard'); // Navigate to the login page
+    };
   
     // Function to handle login
     const handleLogin = () => {
@@ -16,6 +22,10 @@ const LoginPage = () => {
       } else {
         alert('Incorrect username or password'); // Show alert if credentials are incorrect
       }
+    };
+    const handleLoginButtonClick = () => {
+      handleLogin();     // First, handle the login logic
+      handleLoginClick(); // Then, navigate to the login page
     };
   
     // Function to handle 'Enter' key press
@@ -73,7 +83,7 @@ const LoginPage = () => {
             <a href="/forgot-password">Forgot password?</a>
           </div>
   
-          <Button variant="contained" fullWidth className="login-btn" onClick={handleLogin}>
+          <Button variant="contained" fullWidth className="login-btn" onClick={handleLoginButtonClick}>
             Login
           </Button>
   
