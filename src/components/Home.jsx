@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import '../styles/Home.css'; // Custom CSS for background and layout
-import LoginPage from './LoginPage';
+import LoginPage from './LoginandSignup/LoginPage';
 
 const Home = () => {
   

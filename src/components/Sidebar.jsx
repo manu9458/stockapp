@@ -3,11 +3,12 @@ import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import '../styles/Sidebar.css';
 
 const Sidebar = () => {
-  const [isProfileExpanded, setIsProfileExpanded] = useState(false);
+  // States to track expanded menus
+  const [expandedMenu, setExpandedMenu] = useState(null);
 
-  // Function to toggle the "Profile" expansion
-  const handleProfileClick = () => {
-    setIsProfileExpanded(!isProfileExpanded);
+  // Function to toggle the expanded state of a menu
+  const handleMenuClick = (menu) => {
+    setExpandedMenu(expandedMenu === menu ? null : menu);
   };
 
   return (
@@ -16,39 +17,64 @@ const Sidebar = () => {
         <li className="selected">
           <i className="dashboard-icon">🏠</i> Dashboard
         </li>
-        <li>
-          <i className="wallet-icon">💼</i> Wallets
-        </li>
-        <li onClick={handleProfileClick} className="profile-menu">
+        <li onClick={() => handleMenuClick('profile')} className="profile-menu">
           <i className="profile-icon">👤</i> Profile
-          {isProfileExpanded ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
+          {expandedMenu === 'profile' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
         </li>
-        {isProfileExpanded && (
+        {expandedMenu === 'profile' && (
           <ul className="sub-menu">
             <li className="sub-item">View Profile</li>
             <li className="sub-item">Edit Profile</li>
           </ul>
         )}
-        <li>
+        <li onClick={() => handleMenuClick('team')} className="team-menu">
           <i className="team-icon">👥</i> Team
+          {expandedMenu === 'team' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
         </li>
-        <li>
-          <i className="investment-icon">💰</i> Investments
+        {expandedMenu === 'team' && (
+          <ul className="sub-menu">
+            <li className="sub-item">My Sponsor</li>
+            <li className="sub-item">My Team</li>
+          </ul>
+        )}
+        <li onClick={() => handleMenuClick('fund-management')} className="fund-management-menu">
+          <i className="fund-icon">💼</i> Fund Management
+          {expandedMenu === 'fund-management' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
         </li>
-        <li>
+        {expandedMenu === 'fund-management' && (
+          <ul className="sub-menu">
+            <li className="sub-item">Transfer Fund</li>
+            <li className="sub-item">Add Fund</li>
+            <li className="sub-item">Withdrawal</li>
+          </ul>
+        )}
+        <li onClick={() => handleMenuClick('package-buy')} className="package-buy-menu">
+          <i className="investment-icon">💰</i> Fund reports
+          {expandedMenu === 'package-buy' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
+        </li>
+        {expandedMenu === 'package-buy' && (
+          <ul className="sub-menu">
+            <li className="sub-item">Fund Transfer</li>
+            <li className="sub-item">Deposit</li>
+            <li className="sub-item">Withdrawal</li>
+          </ul>
+        )}
+        <li onClick={() => handleMenuClick('reports')} className="reports-menu">
           <i className="reports-icon">📊</i> Reports
+          {expandedMenu === 'reports' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
+        </li>
+        {expandedMenu === 'reports' && (
+          <ul className="sub-menu">
+            <li className="sub-item">Fund Reports</li>
+            <li className="sub-item">Performance Reports</li>
+            <li className="sub-item">Activity Reports</li>
+          </ul>
+        )}
+        <li>
+          <i className="airdrop-icon">✈️</i> Package Buy
         </li>
         <li>
-          <i className="videos-icon">🎥</i> Adding Videos
-        </li>
-        <li>
-          <i className="airdrop-icon">✈️</i> Liza Social Airdrop
-        </li>
-        <li>
-          <i className="deposit-icon">📥</i> Deposit History
-        </li>
-        <li>
-          <i className="withdrawal-icon">📤</i> Withdrawal & History
+          <i className="mailbox-icon">📥</i> Mailbox
         </li>
       </ul>
     </div>
