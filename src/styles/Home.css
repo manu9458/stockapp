@@ -5,7 +5,10 @@
     align-items: center;
     height: 100vh;
     padding: 0 100px;
-    background-color: #003399; /* Blue gradient */
+    background-image: url('../assests/Home2.jpg');
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
   }
   
   .content {
@@ -14,8 +17,9 @@
   }
   
   .image-container {
-    flex-grow: 1;
-    margin-left: 332px;
+    /* flex-grow: 1; */
+    width: 41vw;
+ 
   }
   
   .globe-image {

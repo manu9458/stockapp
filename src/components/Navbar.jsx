@@ -17,41 +17,41 @@ const Navbar = () => {
       <Toolbar>
         {/* Left Icon with some margin */}
         <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }}>
-          <HomeIcon />
+          Capita<i>Grow</i>
         </IconButton>
 
         {/* Menu Items with some spacing */}
         <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center', gap: 3 }}>
           <MenuItem>
             <Typography variant="h6" color="inherit">
-              Menu 1
+              Home
             </Typography>
           </MenuItem>
           <MenuItem>
             <Typography variant="h6" color="inherit">
-              Menu 2
+              Fund
             </Typography>
           </MenuItem>
           <MenuItem>
             <Typography variant="h6" color="inherit">
-              Menu 3
+              Trade
             </Typography>
           </MenuItem>
           <MenuItem>
             <Typography variant="h6" color="inherit">
-              Menu 4
+              Contact
             </Typography>
           </MenuItem>
           <MenuItem>
             <Typography variant="h6" color="inherit">
-              Menu 5
+              Plan
             </Typography>
           </MenuItem>
-          <MenuItem>
+          {/* <MenuItem>
             <Typography variant="h6" color="inherit">
               Menu 6
             </Typography>
-          </MenuItem>
+          </MenuItem> */}
         </Box>
 
         {/* Right side icons with some margin */}

@@ -17,12 +17,12 @@ const Allcom = () => {
     <div>
       <Navbar />
       <Home />
-      <TradingChart />
+      {/* <TradingChart />
       <InvestmentPlans />
       <Roadmap />
       <TradingView />
       <Objective />
-      <StartTradingPage />
+      <StartTradingPage /> */}
     </div>
   );
 };
