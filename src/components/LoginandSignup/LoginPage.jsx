@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
-import '../../styles/LoginPage.css';
-import MainLayout from '../MainLayout';
-import { AccountCircle, Lock, Person } from '@mui/icons-material';
-import { Checkbox, Button, TextField } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../styles/LoginPage.css";
 
 const LoginPage = () => {
   const [isSignup, setIsSignup] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+
+    // Check for fixed credentials
+    if (email === "abrar" && password === "abrar@123") {
+      navigate("/dashboard"); // Navigate to the Dashboard
+    } else {
+      alert("Invalid email or password. Please try again.");
+    }
+  };
 
   const toggleForm = () => {
     setIsSignup((prev) => !prev);
@@ -40,12 +51,24 @@ const LoginPage = () => {
         </div>
         <div className="form-inner">
           {!isSignup ? (
-            <form className="login">
+            <form className="login" onSubmit={handleLoginSubmit}>
               <div className="field">
-                <input type="text" placeholder="Email Address" required />
+                <input
+                  type="text"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
               </div>
               <div className="field">
-                <input type="password" placeholder="Password" required />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
               </div>
               <div className="pass-link">
                 <a href="#">Forgot password?</a>
@@ -82,6 +105,6 @@ const LoginPage = () => {
       </div>
     </div>
   );
-   };
+};
 
 export default LoginPage;

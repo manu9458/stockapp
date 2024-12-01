@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // import LoginPage from './components/LoginPage';
 import DashboardContent from './components/DashboardContent';
 import MainLayout from './components/MainLayout';
+import { AppProvider } from './components/context/AppContext';
 
 const Allcom = () => {
   return (
@@ -30,11 +31,13 @@ const Allcom = () => {
 function App() {
   return (
     <Router>
+    <AppProvider>
       <Routes>
         <Route exact path="/" element={<Allcom />} />
         <Route path="/dashboard" element={<MainLayout />} />
         {/* Add other routes here if needed */}
       </Routes>
+      </AppProvider>
     </Router>
   );
 }

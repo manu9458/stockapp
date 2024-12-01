@@ -1,0 +1,100 @@
+/* Container styling */
+.fund-transfer-container {
+    /* max-width: 800px;
+    margin: 50px auto; */
+    padding: 20px;
+    background-color: #f9faff;
+    /* border-radius: 8px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styling */
+  .header h2 {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #2b3470;
+  }
+  
+  .header .icon {
+    margin-right: 10px;
+  }
+  
+  /* Wallet card */
+  .wallet-summary {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .wallet-card {
+    background: linear-gradient(45deg, #36d17a, #2e946b);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    width: 250px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .wallet-card .balance h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .wallet-card .balance p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .wallet-card .graph svg {
+    max-width: 80px;
+  }
+  
+  /* Form styling */
+  .fund-transfer-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #2b3470;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    height: 80px;
+  }
+  
+  .submit-button {
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  

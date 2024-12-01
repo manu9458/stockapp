@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ExpandMore, ExpandLess } from '@mui/icons-material';
 import '../styles/Sidebar.css';
+import { AppContext } from './context/AppContext';
 
 const Sidebar = () => {
+
+  const { setActiveComponent } = useContext(AppContext); 
   // States to track expanded menus
   const [expandedMenu, setExpandedMenu] = useState(null);
 
@@ -15,7 +18,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul className="nav-items">
         <li className="selected">
-          <i className="dashboard-icon">🏠</i> Dashboard
+          <i className="dashboard-icon" onClick={() => setActiveComponent("dashboard")}>🏠</i> Dashboard
         </li>
         <li onClick={() => handleMenuClick('profile')} className="profile-menu">
           <i className="profile-icon">👤</i> Profile
@@ -23,8 +26,12 @@ const Sidebar = () => {
         </li>
         {expandedMenu === 'profile' && (
           <ul className="sub-menu">
-            <li className="sub-item">View Profile</li>
-            <li className="sub-item">Edit Profile</li>
+          <li className="sub-item" onClick={() => setActiveComponent("profile")}>
+          View Profile
+        </li>
+        <li className="sub-item" onClick={() => setActiveComponent("editProfile")}>
+          Edit Profile
+        </li>
           </ul>
         )}
         <li onClick={() => handleMenuClick('team')} className="team-menu">
@@ -33,8 +40,8 @@ const Sidebar = () => {
         </li>
         {expandedMenu === 'team' && (
           <ul className="sub-menu">
-            <li className="sub-item">My Sponsor</li>
-            <li className="sub-item">My Team</li>
+            <li className="sub-item" onClick={() => setActiveComponent("mysponer")}>My Sponsor</li>
+            <li className="sub-item" onClick={() => setActiveComponent("MyTeam")}>My Team</li>
           </ul>
         )}
         <li onClick={() => handleMenuClick('fund-management')} className="fund-management-menu">
@@ -43,8 +50,8 @@ const Sidebar = () => {
         </li>
         {expandedMenu === 'fund-management' && (
           <ul className="sub-menu">
-            <li className="sub-item">Transfer Fund</li>
-            <li className="sub-item">Add Fund</li>
+            <li className="sub-item" onClick={() => setActiveComponent("FundTransfer")}>Transfer Fund</li>
+            <li className="sub-item" onClick={() => setActiveComponent("AddFund")}>Add Fund</li>
             <li className="sub-item">Withdrawal</li>
           </ul>
         )}
