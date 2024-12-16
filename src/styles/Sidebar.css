@@ -1,61 +1,74 @@
 .sidebar {
-    width: 250px;
-    background-color: #263238;
-    color: white;
-    /* height: 100vh; */
-    /* height: calc(100vh - 70px); */
-  }
- 
-  
-  .nav-items {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-items > li {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    padding: 10px 15px;
-    /* margin: 5px 0; */
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .nav-items > li:hover {
-    background-color: #52575a;
-    border-radius: 5px;
-  }
-  
-  .nav-items > li i {
-    margin-right: 10px; /* Space between icon and text */
-    font-size: 20px;
-  }
-  
-  .nav-items > li.selected {
-    background-color: #007bff;
-    color: white;
-    /* border-radius: 5px; */
-  }
-  
-  .sub-menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 0 0 20px;
-  }
-  
-  .sub-menu .sub-item {
-    padding: 5px 15px;
-    cursor: pointer;
-  }
-  
-  .sub-menu .sub-item:hover {
-    background-color: #52575a;
-    border-radius: 5px;
-  }
-  
-  .expand-icon {
-    margin-left: auto; /* Push the expand icon to the right */
-    font-size: 20px;
-  }
-  
+  width: 250px;
+  background-color: #263238;
+  color: white;
+  /* height: 100vh; */
+  /* height: calc(100vh - 70px); */
+}
+
+
+.nav-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items > li {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  padding: 10px 15px;
+  /* margin: 5px 0; */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-items > li:hover {
+  background-color: #52575a;
+  border-radius: 5px;
+}
+
+.nav-items > li i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 20px;
+}
+
+.nav-items > li.selected {
+  background-color: #007bff;
+  color: white;
+  /* border-radius: 5px; */
+}
+
+.sub-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 20px;
+}
+
+.sub-menu .sub-item {
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.sub-menu .sub-item:hover {
+  background-color: #52575a;
+  border-radius: 5px;
+}
+
+.expand-icon {
+  margin-left: auto; /* Push the expand icon to the right */
+  font-size: 20px;
+}
+
+.sidebar .MuiListItem-root.active-item {
+  background-color:#7a7777;
+  border-left: 4px solid #007bff; /* Highlighting Dashboard */
+}
+
+.sidebar .MuiListItem-root.expanded-item {
+  background-color:#7a7777;
+  border-left: 4px solid #007bff; /* Highlight expanded menu */
+}
+
+.sidebar .MuiListItem-root {
+  transition: all 0.3s ease;
+}

@@ -1,89 +1,144 @@
 import React, { useContext, useState } from 'react';
-import { ExpandMore, ExpandLess } from '@mui/icons-material';
-import '../styles/Sidebar.css';
+import { ExpandMore, ExpandLess, Dashboard, AccountCircle, Group, AccountBalanceWallet, Report, Mail } from '@mui/icons-material'; // Add icons
+import { List, ListItem, IconButton, Collapse, ListItemText, ListItemIcon } from '@mui/material';
 import { AppContext } from './context/AppContext';
+import '../styles/Sidebar.css';
 
 const Sidebar = () => {
-
   const { setActiveComponent } = useContext(AppContext); 
-  // States to track expanded menus
   const [expandedMenu, setExpandedMenu] = useState(null);
+  const [selectedMenu, setSelectedMenu] = useState("dashboard"); // Track the selected menu item
 
-  // Function to toggle the expanded state of a menu
   const handleMenuClick = (menu) => {
     setExpandedMenu(expandedMenu === menu ? null : menu);
   };
 
+  const handleItemClick = (menu) => {
+    setSelectedMenu(menu);
+    setActiveComponent(menu);
+  };
+
   return (
     <div className="sidebar">
-      <ul className="nav-items">
-        <li className="selected">
-          <i className="dashboard-icon" onClick={() => setActiveComponent("dashboard")}>🏠</i> Dashboard
-        </li>
-        <li onClick={() => handleMenuClick('profile')} className="profile-menu">
-          <i className="profile-icon">👤</i> Profile
-          {expandedMenu === 'profile' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
-        </li>
-        {expandedMenu === 'profile' && (
-          <ul className="sub-menu">
-          <li className="sub-item" onClick={() => setActiveComponent("profile")}>
-          View Profile
-        </li>
-        <li className="sub-item" onClick={() => setActiveComponent("editProfile")}>
-          Edit Profile
-        </li>
-          </ul>
-        )}
-        <li onClick={() => handleMenuClick('team')} className="team-menu">
-          <i className="team-icon">👥</i> Team
-          {expandedMenu === 'team' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
-        </li>
-        {expandedMenu === 'team' && (
-          <ul className="sub-menu">
-            <li className="sub-item" onClick={() => setActiveComponent("mysponer")}>My Sponsor</li>
-            <li className="sub-item" onClick={() => setActiveComponent("MyTeam")}>My Team</li>
-          </ul>
-        )}
-        <li onClick={() => handleMenuClick('fund-management')} className="fund-management-menu">
-          <i className="fund-icon">💼</i> Fund Management
-          {expandedMenu === 'fund-management' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
-        </li>
-        {expandedMenu === 'fund-management' && (
-          <ul className="sub-menu">
-            <li className="sub-item" onClick={() => setActiveComponent("FundTransfer")}>Transfer Fund</li>
-            <li className="sub-item" onClick={() => setActiveComponent("AddFund")}>Add Fund</li>
-            <li className="sub-item">Withdrawal</li>
-          </ul>
-        )}
-        <li onClick={() => handleMenuClick('package-buy')} className="package-buy-menu">
-          <i className="investment-icon">💰</i> Fund reports
-          {expandedMenu === 'package-buy' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
-        </li>
-        {expandedMenu === 'package-buy' && (
-          <ul className="sub-menu">
-            <li className="sub-item">Fund Transfer</li>
-            <li className="sub-item">Deposit</li>
-            <li className="sub-item">Withdrawal</li>
-          </ul>
-        )}
-        <li onClick={() => handleMenuClick('reports')} className="reports-menu">
-          <i className="reports-icon">📊</i> Reports
-          {expandedMenu === 'reports' ? <ExpandLess className="expand-icon" /> : <ExpandMore className="expand-icon" />}
-        </li>
-        {expandedMenu === 'reports' && (
-          <ul className="sub-menu">
-            <li className="sub-item">Fund Reports</li>
-            <li className="sub-item">Performance Reports</li>
-            <li className="sub-item">Activity Reports</li>
-          </ul>
-        )}
-        <li>
-          <i className="airdrop-icon">✈️</i> Package Buy
-        </li>
-        <li>
-          <i className="mailbox-icon">📥</i> Mailbox
-        </li>
-      </ul>
+      <List component="nav">
+        {/* Dashboard */}
+        <ListItem 
+          button 
+          onClick={() => handleItemClick("dashboard")}
+          className={selectedMenu === "dashboard" ? 'active-item' : ''} 
+        >
+          <ListItemIcon sx={{ color: '#1976d2' }}> {/* Blue color for Dashboard */}
+            <Dashboard />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+
+        {/* Profile */}
+        <ListItem button onClick={() => handleMenuClick('profile')} className={expandedMenu === 'profile' ? 'expanded-item' : ''}>
+          <ListItemIcon sx={{ color: '#ff9800' }}> {/* Orange color for Profile */}
+            <AccountCircle />
+          </ListItemIcon>
+          <ListItemText primary="Profile" />
+          <IconButton>
+            {expandedMenu === 'profile' ? <ExpandLess sx={{ color: '#ffffff' }} /> : <ExpandMore sx={{ color: '#ffffff' }} />}
+          </IconButton>
+        </ListItem>
+        <Collapse in={expandedMenu === 'profile'} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button onClick={() => handleItemClick("profile")}>
+              <ListItemText primary="View Profile" />
+            </ListItem>
+            <ListItem button onClick={() => handleItemClick("editProfile")}>
+              <ListItemText primary="Edit Profile" />
+            </ListItem>
+          </List>
+        </Collapse>
+
+        {/* Team */}
+        <ListItem button onClick={() => handleMenuClick('team')} className={expandedMenu === 'team' ? 'expanded-item' : ''}>
+          <ListItemIcon sx={{ color: '#4caf50' }}> {/* Green color for Team */}
+            <Group />
+          </ListItemIcon>
+          <ListItemText primary="Team" />
+          <IconButton>
+            {expandedMenu === 'team' ? <ExpandLess sx={{ color: '#ffffff' }} /> : <ExpandMore sx={{ color: '#ffffff' }} />}
+          </IconButton>
+        </ListItem>
+        <Collapse in={expandedMenu === 'team'} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button onClick={() => handleItemClick("mysponsor")}>
+              <ListItemText primary="My Sponsor" />
+            </ListItem>
+            <ListItem button onClick={() => handleItemClick("MyTeam")}>
+              <ListItemText primary="My Team" />
+            </ListItem>
+          </List>
+        </Collapse>
+
+        {/* Fund Management */}
+        <ListItem button onClick={() => handleMenuClick('fund-management')} className={expandedMenu === 'fund-management' ? 'expanded-item' : ''}>
+          <ListItemIcon sx={{ color: '#f44336' }}> {/* Red color for Fund Management */}
+            <AccountBalanceWallet />
+          </ListItemIcon>
+          <ListItemText primary="Fund Management" />
+          <IconButton>
+            {expandedMenu === 'fund-management' ? <ExpandLess sx={{ color: '#ffffff' }} /> : <ExpandMore sx={{ color: '#ffffff' }} />}
+          </IconButton>
+        </ListItem>
+        <Collapse in={expandedMenu === 'fund-management'} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button onClick={() => handleItemClick("FundTransfer")}>
+              <ListItemText primary="Transfer Fund" />
+            </ListItem>
+            <ListItem button onClick={() => handleItemClick("AddFund")}>
+              <ListItemText primary="Add Fund" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Withdrawal" />
+            </ListItem>
+          </List>
+        </Collapse>
+
+        {/* Reports */}
+        <ListItem button onClick={() => handleMenuClick('reports')} className={expandedMenu === 'reports' ? 'expanded-item' : ''}>
+          <ListItemIcon sx={{ color: '#9c27b0' }}> {/* Purple color for Reports */}
+            <Report />
+          </ListItemIcon>
+          <ListItemText primary="Reports" />
+          <IconButton>
+            {expandedMenu === 'reports' ? <ExpandLess sx={{ color: '#ffffff' }} /> : <ExpandMore sx={{ color: '#ffffff' }} />}
+          </IconButton>
+        </ListItem>
+        <Collapse in={expandedMenu === 'reports'} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItem button>
+              <ListItemText primary="Fund Reports" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Performance Reports" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Activity Reports" />
+            </ListItem>
+          </List>
+        </Collapse>
+
+        {/* Package Buy */}
+        <ListItem button onClick={() => handleItemClick('package-buy')} className={selectedMenu === 'package-buy' ? 'active-item' : ''}>
+          <ListItemIcon sx={{ color: '#ff5722' }}> {/* Deep Orange for Package Buy */}
+            <AccountBalanceWallet />
+          </ListItemIcon>
+          <ListItemText primary="Package Buy" />
+        </ListItem>
+
+        {/* Mailbox */}
+        <ListItem button onClick={() => handleItemClick('mailbox')} className={selectedMenu === 'mailbox' ? 'active-item' : ''}>
+          <ListItemIcon sx={{ color: '#3f51b5' }}> {/* Indigo color for Mailbox */}
+            <Mail />
+          </ListItemIcon>
+          <ListItemText primary="Mailbox" />
+        </ListItem>
+      </List>
     </div>
   );
 };

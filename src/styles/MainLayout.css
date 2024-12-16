@@ -1,15 +1,35 @@
-/* MainLayout.css */
+/* Main Layout - Fix the main layout structure */
 .main-layout {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .content-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background-color: #f1f3f6;
-  }
-  
-  /* Sidebar and TopBar specific styles should be placed in their respective CSS files */
-  
+  display: flex;
+  height: calc(100vh - 70px);
+  overflow: hidden; /* Prevents scrolling for the entire layout */
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Ensure the sidebar stays at full height */
+  z-index: 10; /* Sidebar stays above content */
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f3f6;
+  overflow-y: auto; /* Makes content scrollable */
+  padding: 20px;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20; /* Ensures Nav stays above the content */
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 15; /* Top bar stays above content, but below Nav */
+}
+
