@@ -43,95 +43,62 @@ const DashboardContent = () => {
   ];
 
   return (
-    <div className="dashboard-grid">
-      {data.map((item, index) => (
-        <div key={index} className="info-card">
-          <div className="carditem">
-            <div className="card-header">
-              <h3>{item.value}</h3>
-              <p>{item.label}</p>
+    <div className="dashboard-container">
+      {/* Dashboard Heading */}
+      <div className="dashboard-header">
+        <h1>Dashboard</h1>
+      </div>
+
+      {/* Cards and Graphs */}
+      <div className="dashboard-grid">
+        {data.map((item, index) => (
+          <div key={index} className="info-card">
+            <div className="carditem">
+              <div className="card-header">
+                <h3>{item.value}</h3>
+                <p>{item.label}</p>
+              </div>
+              <div className="card-icon">{item.icon}</div>
             </div>
-            <div className="card-icon">
-              {item.icon}
-            </div>
+
+            {/* Different chart types in each card */}
+            {index === 0 && (
+              <div className="chart-container">
+                <ResponsiveContainer width="100%" height={100}>
+                  <LineChart data={graphData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} dot={false} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            )}
+            {index === 1 && (
+              <div className="chart-container">
+                <ResponsiveContainer width="100%" height={100}>
+                  <BarChart data={barData}>
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Bar dataKey="value" fill="#8884d8" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            )}
+            {index === 2 && (
+              <div className="chart-container">
+                <ResponsiveContainer width="100%" height={100}>
+                  <PieChart>
+                    <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={50} fill="#8884d8" />
+                    {pieData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={index % 2 === 0 ? '#8884d8' : '#82ca9d'} />
+                    ))}
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            )}
           </div>
-
-          {/* Different chart types in each card */}
-          {index === 0 && (
-            <div className="chart-container">
-              <ResponsiveContainer width="100%" height={100}>
-                <LineChart data={graphData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
-          {index === 1 && (
-            <div className="chart-container">
-              <ResponsiveContainer width="100%" height={100}>
-                <BarChart data={barData}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Bar dataKey="value" fill="#8884d8" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
-          {index === 2 && (
-            <div className="chart-container">
-              <ResponsiveContainer width="100%" height={100}>
-                <PieChart>
-                  <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={50} fill="#8884d8" />
-                  {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index % 2 === 0 ? "#8884d8" : "#82ca9d"} />
-                  ))}
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
-          {index === 3 && (
-            <div className="chart-container">
-              <ResponsiveContainer width="100%" height={100}>
-                <LineChart data={graphData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <Tooltip />
-                  <Line type="monotone" dataKey="value" stroke="#82ca9d" strokeWidth={2} dot={false} />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
-          {index === 4 && (
-            <div className="chart-container">
-              <ResponsiveContainer width="100%" height={100}>
-                <BarChart data={barData}>
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Bar dataKey="value" fill="#82ca9d" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-
-          {index === 5 && (
-            <div className="chart-container">
-              <ResponsiveContainer width="100%" height={100}>
-                <PieChart>
-                  <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={50} fill="#82ca9d" />
-                  {pieData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={index % 2 === 0 ? "#82ca9d" : "#8884d8"} />
-                  ))}
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

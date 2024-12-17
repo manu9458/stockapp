@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <div className="container">
       <div className="content">
-        <div style={{ fontSize: "56px", fontWeight: "bold" }}> Capita<i>Grow</i></div>
-        <div sx={{marginTop:'7px'}}> How to Make Money Trading Forex</div>
+        <div style={{ fontSize: "56px", fontWeight: "bold", color:"white" }}> Capita<i>Grow</i></div>
+        <div style={{marginTop:'7px', color:"white"}}> How to Make Money Trading Forex</div>
       </div>
       <div className="image-container">
         <LoginPage></LoginPage>

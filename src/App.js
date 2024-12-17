@@ -12,18 +12,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DashboardContent from './components/DashboardContent';
 import MainLayout from './components/MainLayout';
 import { AppProvider } from './components/context/AppContext';
-
+import Singup from "./components/LoginandSignup/Signup"
 const Allcom = () => {
   return (
     <div>
       <Navbar />
       <Home />
-      {/* <TradingChart />
+      <TradingChart />
       <InvestmentPlans />
       <Roadmap />
       <TradingView />
       <Objective />
-      <StartTradingPage /> */}
+      <StartTradingPage />
     </div>
   );
 };
@@ -35,6 +35,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Allcom />} />
         <Route path="/dashboard" element={<MainLayout />} />
+        <Route path="/signup" element={<Singup/>}/>
         {/* Add other routes here if needed */}
       </Routes>
       </AppProvider>

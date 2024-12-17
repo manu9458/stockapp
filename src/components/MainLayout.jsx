@@ -23,7 +23,7 @@ const MainLayout = () => {
         return <DashboardContent />;
       case "editProfile":
         return <ChangePassword />;
-      case "mysponer":
+      case "mysponsor":
         return <MySponser />;
       case "MyTeam":
         return <MyTeam />;

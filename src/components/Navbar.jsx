@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate from react
 
 const Navbar = () => {
   return (
-    <AppBar position="static" style={{backgroundColor:'#19193e'}}>
+    <AppBar position="fixed" style={{ backgroundColor: '#19193e' }}>
       <Toolbar>
         {/* Left Icon with some margin */}
         <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }}>
@@ -47,11 +47,6 @@ const Navbar = () => {
               Plan
             </Typography>
           </MenuItem>
-          {/* <MenuItem>
-            <Typography variant="h6" color="inherit">
-              Menu 6
-            </Typography>
-          </MenuItem> */}
         </Box>
 
         {/* Right side icons with some margin */}
@@ -62,9 +57,6 @@ const Navbar = () => {
           <IconButton color="inherit">
             <TwitterIcon />
           </IconButton>
-          {/* <IconButton color="inherit" onClick={handleLoginClick}>
-            <LoginIcon />
-          </IconButton> */}
         </Box>
       </Toolbar>
     </AppBar>
