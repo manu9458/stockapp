@@ -1,0 +1,74 @@
+.fund-table-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .fund-table-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .entries-dropdown {
+    font-size: 14px;
+  }
+  
+  .entries-dropdown select {
+    margin-left: 5px;
+    padding: 5px;
+  }
+  
+  .search-bar {
+    font-size: 14px;
+  }
+  
+  .search-bar input {
+    margin-left: 5px;
+    padding: 5px;
+  }
+  
+  .fund-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .fund-table th,
+  .fund-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .fund-table th {
+    background: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .no-data {
+    text-align: center;
+    color: #888;
+  }
+  
+  .fund-table-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: not-allowed;
+  }
+  
+  .pagination button:hover {
+    background: #f4f4f4;
+  }
+  

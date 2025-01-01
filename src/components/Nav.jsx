@@ -12,10 +12,10 @@ const Nav = () => {
         {/* Left Section - Title with Icon */}
         <Grid container alignItems="center">
           <IconButton color="inherit">
-            <PublicIcon />
+            {/* <PublicIcon /> */}
           </IconButton>
           <Typography variant="h6" style={{ marginLeft: '7px' }}>
-            Welcome to CapitaGrow
+            CapitaGrow
           </Typography>
         </Grid>
 

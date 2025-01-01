@@ -1,0 +1,41 @@
+.investment-card {
+    background: white;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .investment-card-header {
+    margin-bottom: 15px;
+  }
+  
+  .investment-card-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .investment-card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .investment-card-amount {
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .investment-card-button {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .investment-card-button:hover {
+    opacity: 0.9;
+  }
+  

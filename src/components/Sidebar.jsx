@@ -44,7 +44,7 @@ const Sidebar = () => {
           </IconButton>
         </ListItem>
         <Collapse in={expandedMenu === 'profile'} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List component="div" disablePadding sx={{marginLeft: "56px"}}>
             <ListItem button onClick={() => handleItemClick("profile")}>
               <ListItemText primary="View Profile" />
             </ListItem>
@@ -65,7 +65,7 @@ const Sidebar = () => {
           </IconButton>
         </ListItem>
         <Collapse in={expandedMenu === 'team'} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List component="div" disablePadding sx={{marginLeft: "56px"}}>
             <ListItem button onClick={() => handleItemClick("mysponsor")}>
               <ListItemText primary="My Sponsor" />
             </ListItem>
@@ -86,7 +86,7 @@ const Sidebar = () => {
           </IconButton>
         </ListItem>
         <Collapse in={expandedMenu === 'fund-management'} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
+          <List component="div" disablePadding sx={{marginLeft: "56px"}}>
             <ListItem button onClick={() => handleItemClick("FundTransfer")}>
               <ListItemText primary="Transfer Fund" />
             </ListItem>
@@ -104,27 +104,27 @@ const Sidebar = () => {
           <ListItemIcon sx={{ color: '#9c27b0' }}> {/* Purple color for Reports */}
             <Report />
           </ListItemIcon>
-          <ListItemText primary="Reports" />
+          <ListItemText primary="Fund Reports" />
           <IconButton>
             {expandedMenu === 'reports' ? <ExpandLess sx={{ color: '#ffffff' }} /> : <ExpandMore sx={{ color: '#ffffff' }} />}
           </IconButton>
         </ListItem>
         <Collapse in={expandedMenu === 'reports'} timeout="auto" unmountOnExit>
-          <List component="div" disablePadding>
-            <ListItem button>
-              <ListItemText primary="Fund Reports" />
+          <List component="div" disablePadding sx={{marginLeft: "56px"}}>
+            <ListItem button onClick={() => handleItemClick("FundTransferHistory")}>
+              <ListItemText primary="Fund Transfer" />
             </ListItem>
-            <ListItem button>
-              <ListItemText primary="Performance Reports" />
+            <ListItem button onClick={() => handleItemClick("DepositeHistory")}>
+              <ListItemText primary="Deposite" />
             </ListItem>
-            <ListItem button>
-              <ListItemText primary="Activity Reports" />
+            <ListItem button onClick={() => handleItemClick("WithdrawalHistory")}>
+              <ListItemText primary="Withdrawal" />
             </ListItem>
           </List>
         </Collapse>
 
         {/* Package Buy */}
-        <ListItem button onClick={() => handleItemClick('package-buy')} className={selectedMenu === 'package-buy' ? 'active-item' : ''}>
+        <ListItem button onClick={() => handleItemClick('InvestmentPlans')} className={selectedMenu === 'InvestmentPlans' ? 'active-item' : ''}>
           <ListItemIcon sx={{ color: '#ff5722' }}> {/* Deep Orange for Package Buy */}
             <AccountBalanceWallet />
           </ListItemIcon>

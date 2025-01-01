@@ -1,0 +1,18 @@
+.investment-plans-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .investment-plans-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .investment-plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  

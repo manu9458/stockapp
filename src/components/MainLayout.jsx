@@ -11,7 +11,10 @@ import MySponser from "./Team/MySponser";
 import MyTeam from "./Team/MyTeam";
 import FundTransfer from "./Fund/FundTransfer";
 import AddFund from "./Fund/AddFund";
-
+import InvestmentPlans from "./InvestmentCard/InvestmentPlans";
+import FundTransferHistory from "./FundTable/FundTransferHistory";
+import Deposite from "./FundTable/Deposite";
+import WithdrawalHistory from "./FundTable/WithdrawalHistory";
 const MainLayout = () => {
   const { activeComponent } = useContext(AppContext);
 
@@ -31,6 +34,15 @@ const MainLayout = () => {
         return <FundTransfer />;
       case "AddFund":
         return <AddFund />;
+      case "InvestmentPlans":
+          return <InvestmentPlans />;
+      case "FundTransferHistory":
+          return <FundTransferHistory />;
+      case "DepositeHistory":
+          return <Deposite />;
+      case "WithdrawalHistory":
+          return <WithdrawalHistory />;
+        
       default:
         return <DashboardContent />;
     }
@@ -43,7 +55,6 @@ const MainLayout = () => {
       <div className="main-layout">
         {/* Sidebar that stays fixed */}
         <Sidebar className="sidebar" />
-        
         {/* Scrollable content container */}
         <div className="content-container">
           {/* TopBar stays on top */}
